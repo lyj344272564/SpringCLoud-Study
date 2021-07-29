@@ -1,0 +1,15 @@
+server:
+  port: 9200
+spring:
+  application:
+    name: lyj-cloud-eureka
+eureka:
+  instance:
+    hostname: lyjCloundEurekaServerA
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://lyjCloundEurekaServerB:9201/eureka/
+    register-with-eureka: true # 自己就是服务不需要注册自己
+    fetch-registry: true #自己就是服务不需要从Eureka Server获取服务信息,默认为true，置 为false
+

@@ -1,0 +1,28 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: lyj-service-product
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lyj?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lyjCloundEurekaServerB:9201/eureka/,http://lyjCloundEurekaServerA:9200/eureka/
+    registry-fetch-interval-seconds: 30
+    instance:
+      prefer-ip-address: true
+      instance-id: ${spring.cloud.client.ip- address}:${spring.application.name}:${server.port}:1.0-SNAPSHOT
+      metadata-map:
+        name: richard
+        age: 20
+        master: ailibaba
+        password: 123456
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 90
+    register-with-eureka: true # 自己就是服务不需要注册自己
+    fetch-registry: true #自己就是服务不需要从Eureka Server获取服务信息,默认为true，置 为false
+

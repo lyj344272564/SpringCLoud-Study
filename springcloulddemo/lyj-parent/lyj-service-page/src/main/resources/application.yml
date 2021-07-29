@@ -1,0 +1,60 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: lyj-service-page
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lyj?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lyjCloundEurekaServerB:9201/eureka/,http://lyjCloundEurekaServerA:9200/eureka/
+    instance:
+      prefer-ip-address: true
+      instance-id: ${spring.cloud.client.ip- address}:${spring.application.name}:${server.port}:@project.version@
+    register-with-eureka: true # 自己就是服务不需要注册自己
+    fetch-registry: true #自己就是服务不需要从Eureka Server获取服务信息,默认为true，置 为false
+
+lyj-service-product:
+  ribbon:
+    ConnectTimeout: 2000
+    ReadTimeout: 15000
+    OkToRetryOnAllOperations: true
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 0
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        forceOpen: false
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 3000
+        requestVolumeThreshold: 2
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+feign:
+  hystrix:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: text/html,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true

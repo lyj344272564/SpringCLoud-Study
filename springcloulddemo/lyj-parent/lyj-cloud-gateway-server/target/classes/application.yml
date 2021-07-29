@@ -1,0 +1,27 @@
+server:
+  port: 9300
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lyjCloundEurekaServerA:9200/eureka/,http://lyjCloundEurekaServerB:9201/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:2.1.6.RELEASE
+spring:
+  application:
+    name: lyj-cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: server-page-router
+          uri: lb://lyj-service-page
+          predicates:
+            - Path=/page/**
+        - id: service-product-router
+          uri: lb://lyj-service-product
+          predicates:
+            - Path=/product/**
+          filters:
+            - StripPrefix=1
+
+

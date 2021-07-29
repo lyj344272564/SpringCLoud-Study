@@ -1,0 +1,19 @@
+server:
+  port: 9400
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+    prefer-ip-address: true
+spring:
+  application:
+    name: lyj-service-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lyj344272564/lyj-cloud-config.git
+          username: lyj344272564
+          password: lyj5211314LYJ
+          search-paths:
+            - lyj-cloud-config
+      label: main

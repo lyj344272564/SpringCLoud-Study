@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-cloud-eureka/lyj-cloud-eureka.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-cloud-eureka/lyj-cloud-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-cloud-eureka-9201/lyj-cloud-eureka-9201.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-cloud-eureka-9201/lyj-cloud-eureka-9201.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-cloud-gateway-server/lyj-cloud-gateway-server.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-cloud-gateway-server/lyj-cloud-gateway-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-config/lyj-config.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-config/lyj-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-parent.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-service-common/lyj-service-common.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-service-common/lyj-service-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-service-page/lyj-service-page.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-service-page/lyj-service-page.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-service-product/lyj-service-product.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-service-product/lyj-service-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyj-parent/lyj-service-product-9003/lyj-service-product-9003.iml" filepath="$PROJECT_DIR$/lyj-parent/lyj-service-product-9003/lyj-service-product-9003.iml" />
+    </modules>
+  </component>
+</project>
